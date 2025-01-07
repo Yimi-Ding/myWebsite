@@ -1,7 +1,6 @@
 /*Author: Yimi Ding; Last updated date:10/26/2024*/
 /*This is the style sheet for 4 html files: index, Projects; resume, Contact*/
 
-/*style setting below is for desktop screen that is bigger than 1025px of width*/
 html, body {
     margin: 0;
     padding: 0;
@@ -30,8 +29,6 @@ header, footer{
 
 header nav ul {
     display: flex;
-    justify-content: flex-end;
-    gap: 0.5rem;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -74,15 +71,16 @@ nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    align-content: center; /* centers multiple rows of items along the cross axis. */
     gap: 2rem;
     padding: 5rem 2rem;
     margin: 0 auto;
-    width: 70%;
+    width: 90%;
+    max-width: 1200px;
 }
 
 #profile-text {
-    width: 480px;
+    width: 100%;
+    max-width: 480px;
     font-size: 12px;
     text-align: left;
 }
@@ -106,6 +104,8 @@ nav a {
     border-style: dotted;
     margin-right: 0.3rem;
     max-width: 200px;
+    width: 100%;
+    height: auto;
 }
 
 #profile-text a:hover, a:hover {
@@ -116,24 +116,16 @@ nav a {
     font-size: 13px;
 }
 
-
-/*specific style for resume.html*/
-a {
-    font-size: 13px;
-    padding: 8px;
-    color: inherit;
-    text-decoration: none;
-}
-
-body #resume {
+/* Resume styles */
+#resume {
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: auto auto auto auto;
     grid-template-areas:
-    "contact work"
-    "obj work"
-    "edu skills"
-    "edu skills";
+        "contact work"
+        "obj work"
+        "edu skills"
+        "edu skills";
     padding: 1rem 4rem;
     gap: 1.5rem;
     width: 75%;
@@ -142,31 +134,48 @@ body #resume {
     font-size: 0.8rem;
 }
 
-#resume #Contact ul li img {
-    float: left;
-    margin-right: 10px;
-}
-
-#resume #Contact{
+#resume #Contact {
     grid-area: contact;
     padding: 0.5rem 1rem;
     border: #ffd5e4 solid;
     background-color: #fcdedf;
     border-radius: 1rem;
     border-style: dashed;
+    box-sizing: border-box;
+    width: auto;
+}
+
+#resume #Contact ul {
+    margin: 0;
+    padding: 0;
 }
 
 #resume #Contact ul li {
     list-style-type: none;
     padding: 2px;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+#resume #Contact ul li img {
+    float: left;
+    margin-right: 10px;
+    flex-shrink: 0;
 }
 
 #resume #Contact ul li a {
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
-#resume #Contact ul li img{
-    float:left;
+a {
+    font-size: 13px;
+    padding: 8px;
+    color: inherit;
+    text-decoration: none;
 }
 
 #resume h2 {
@@ -176,170 +185,60 @@ body #resume {
     margin-bottom: 10px;
 }
 
-.date {
-    font-size: 0.8rem;
-    font-style: italic;
-    color: #666;
-}
-
-.company {
-    color: #333652;
-    margin-bottom: 0.5rem;
-    font-style: italic;
-}
-
-#Objective,  #WorkExperience, #skills, #education {
+#Objective, #WorkExperience, #skills, #education {
     border: #333652 dotted 3px;
     background-color: #ffffff;
     border-radius: 1rem;
     padding: 0.5rem 1rem;
 }
 
-#Objective {
-    grid-area: obj;
-    font-size: 0.9rem;
-}
-
-#WorkExperience {
-    grid-area: work;
-}
-
-#skills {
-    grid-area: skills;
-}
-
-#education {
-    grid-area: edu;
-}
-
-
-/*specific style for Project.html*/
+/* Projects styles */
 #projects {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
     gap: 2rem;
-    padding: 4rem 5rem;
-    background-color: #eef0fd;
-    margin: 0 auto;
-    width: 80%;
+    padding: 2rem 1rem;
+    width: 90%;
     max-width: 1000px;
+    margin: 0 auto;
     font-size: 12px;
 }
 
-#projects img {
-    border-radius: 2rem;
-}
-
-#project1img, project2img, canelePhoto{
-    width: 300px;
-}
-
 #project1, #project2, #project3 {
-    display:flex;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-direction: row;
     border: 3px dotted #626585;
     background-color: #ffffff;
     border-radius: 1rem;
     padding: 1rem;
+    gap: 1rem;
 }
 
-#project3 {
-    order: 0;
+#projects img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 2rem;
 }
 
-#project1 {
-    order: 1;
-}
-
-#project2 {
-    order: 2;
-}
-
-#projects h2 {
-    margin-top: 0;
-    font-size: 1.1rem;
-}
-
-#projects .details {
-    font-size:0.8rem;
-    line-height: 1.5;
-    font-style: italic;
-}
-
-#caneleLogo{
-    float:left;
-    padding: 1rem;
-}
-
-#projects a:hover, #project a:visited {
-    background-color: transparent;
-}
-
-
-/*specific style for contact.html*/
+/* Contact form styles */
 #contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas:
-        "name email"
-        "subject subject"
-        "message message"
-        "submit submit";
-    grid-gap: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    margin: 3rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     padding: 1.5rem;
-    width: 60%;
+    width: 90%;
     max-width: 800px;
+    margin: 2rem auto;
     background-color: #ffffff;
     border-radius: 2rem;
     border: #2a3172 dotted 3px;
 }
 
-#nameArea {
-    grid-area: name;
-}
-
-#emailArea {
-    grid-area: email;
-}
-
-#subjectArea {
-    grid-area: subject;
-}
-
-#messageArea {
-    grid-area: message;
-}
-
-button {
-    font-size: 1rem;
-    font-weight: bold;
-    grid-area: submit;
-    width: 100%; 
-    padding: 8px 16px;
-    background-color: #333652;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    align-self: center;
-    justify-self: center; 
-    margin: 0;
-}
-
-button:hover {
-    background-color: #ffd5e4;
-    color: #333652;
-}
-
 input, textarea {
+    width: 100%;
     padding: 1rem;
-    width: 100%; 
     font-size: 1rem;
     border-radius: 8px;
     border: 1.5px dashed #756ba1;
@@ -347,126 +246,185 @@ input, textarea {
     background-color: #fffafc;
 }
 
-footer {
-    align-items: flex-end;
+#messageArea textarea {
+    height: 150px;
 }
 
+/* Resume content styles */
+#resume #skills, #resume #Objective, #resume #WorkExperience, #resume #education {
+    border: #333652 dotted 3px;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    width: auto;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
 
-/* responsive design */
-@media (max-width: 1024px) { /*tablet screen*/
+#resume #skills ul, 
+#resume #WorkExperience ul {
+    padding-left: 1.2rem;
+    margin: 0.5rem 0;
+}
 
-    header nav ul {
-        display: flex;
-        gap: 0.5rem;
-        font-size: 1rem;
+#resume #skills ul ul {
+    padding-left: 1.5rem;
+}
+
+#resume #skills li,
+#resume #WorkExperience li {
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile styles for resume */
+@media (max-width: 600px) {
+    #resume {
+        grid-template-columns: 1fr !important;
+        grid-template-areas: 
+            "contact"
+            "obj"
+            "work"
+            "edu"
+            "skills" !important;
+        width: 90% !important;
+        padding: 1rem !important;
     }
 
-    nav a {
-        font-size: 1rem;
+    #resume > div {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #resume #skills ul, 
+    #resume #WorkExperience ul {
+        padding-left: 1rem;
+    }
+
+    #resume #skills ul ul {
+        padding-left: 1.2rem;
+    }
+}
+
+button {
+    width: 100%;
+    padding: 8px 16px;
+    background-color: #333652;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ffd5e4;
+    color: #333652;
+}
+
+/* Tablet breakpoint (768px and up) */
+@media (min-width: 768px) {
+    header nav ul {
+        justify-content: flex-end;
+        gap: 0.5rem;
     }
 
     #profile-container {
         flex-direction: row;
-        align-items: center;
-        gap: 1rem;
-        padding: 3rem 1.5rem;
-        width: 100%;
-    }
-    
-    #profile-text {
-        font-size: 1rem;
         text-align: left;
+        padding: 3rem 2rem;
     }
 
-    body #resume {
-        padding: 1.5rem;
-        width: 90%;
-        font-size: 14px;
+    #resume {
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas:
+            "contact work"
+            "obj work"
+            "edu skills"
+            "edu skills";
+        padding: 2rem;
     }
+
+    #Contact { grid-area: contact; }
+    #Objective { grid-area: obj; }
+    #WorkExperience { grid-area: work; }
+    #education { grid-area: edu; }
+    #skills { grid-area: skills; }
 
     #contact {
-        grid-template-columns: 1fr;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas:
-            "name"
-            "email"
-            "subject"
-            "message"
-            "submit";
+            "name email"
+            "subject subject"
+            "message message"
+            "submit submit";
     }
-    
-    #projects {
-        padding: 3rem 2rem;
-        width: 85%;
-        font-size: 14px;
+
+    #nameArea { grid-area: name; }
+    #emailArea { grid-area: email; }
+    #subjectArea { grid-area: subject; }
+    #messageArea { grid-area: message; }
+    button { grid-area: submit; }
+}
+
+/* Desktop breakpoint (1024px and up) */
+@media (min-width: 1024px) {
+    #profile-container {
+        width: 70%;
     }
 
     #project1, #project2, #project3 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width:100%;
-        padding: 1rem;
-    }
-
-    #caneleLogo {
-        width: 60%;
-    }
-
-    #project1img, #project2img, #canelePhoto{
-        width:100%;
-    }
-
-}
-
-@media (max-width: 600px) { /*mobile phone screen*/
-    #profile-container {
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 1rem;
-        padding: 2rem;
-        width: 90%;
-    }
-
-    #profile-text {
-        min-width: auto;
-        font-size: 0.9rem;
-        text-align: center;
-    }
-
-    header nav ul {
-        flex-direction: column;
-        gap: 2px;
-    }
-
-    body #resume {
-        display:flex;
-        flex-direction: column;
-        padding: 1.5rem;
-    }
-
-    #contact {
-        display:flex;
-        flex-direction: column;
-        padding: 1.5rem;
-        font-size: medium;
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     #projects {
+        padding: 4rem 5rem;
+    }
+
+    #resume {
+        width: 75%;
+    }
+
+    #contact {
+        width: 60%;
+    }
+}
+
+/* Mobile breakpoint (600px and down) */
+@media (max-width: 600px) {
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    #profile-container {
+        flex-direction: column;
+        text-align: center;
         padding: 2rem 1rem;
     }
 
-    #project1, #project2, #project3 {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
+    #profile-text {
+        font-size: 0.9rem;
+    }
+
+    .date, .company {
+        font-size: 0.9rem;
+    }
+
+    #projects h2 {
+        font-size: 1rem;
+    }
+
+    #projects .details {
+        font-size: 0.8rem;
     }
 
     footer {
-        align-items: center;
+        text-align: center;
         padding: 1rem;
-        font-size: 0.8rem;
     }
 }
