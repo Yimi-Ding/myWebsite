@@ -99,9 +99,6 @@ nav a {
 }
 
 #profile-container img {
-    border: 4px solid #333652;
-    border-radius: 180px;
-    border-style: dotted;
     margin-right: 0.3rem;
     max-width: 200px;
     width: 100%;
@@ -192,6 +189,9 @@ a {
     padding: 0.5rem 1rem;
 }
 
+
+
+
 /* Projects styles */
 #projects {
     display: flex;
@@ -222,6 +222,10 @@ a {
     border-radius: 2rem;
 }
 
+
+
+
+
 /* Contact form styles */
 #contact {
     display: flex;
@@ -250,6 +254,10 @@ input, textarea {
     height: 150px;
 }
 
+
+
+
+
 /* Resume content styles */
 #resume #skills, #resume #Objective, #resume #WorkExperience, #resume #education {
     border: #333652 dotted 3px;
@@ -277,6 +285,9 @@ input, textarea {
 #resume #WorkExperience li {
     margin-bottom: 0.5rem;
 }
+
+
+
 
 /* Mobile styles for resume */
 @media (max-width: 600px) {
