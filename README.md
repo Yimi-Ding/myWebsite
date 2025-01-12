@@ -1,4 +1,5 @@
 🌐 My Web Design Adventure 🌐  
+visit the website: https://yimi-ding.github.io/myWebsite/
 
 Welcome to my web design playground! 🎉 Here, you’ll find a collection of four HTML pages and one CSS stylesheet, each crafted with creativity, style, and a focus on responsive design.   
 
